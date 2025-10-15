@@ -33,7 +33,7 @@ android {
 
 dependencies {
 
-    //implementation(files("C:/Users/User/AppData/Local/Android/Sdk/platforms/android-36/android.jar"))
+    implementation(files("C:/Users/User/AppData/Local/Android/Sdk/platforms/android-36/android.jar"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
