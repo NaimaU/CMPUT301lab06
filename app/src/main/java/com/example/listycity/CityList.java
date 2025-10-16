@@ -34,7 +34,7 @@ public class CityList {
     }
 
     /**
-     * When given a city, return whether or not it belongs in the list
+     * When given a city, return whether or not it belongs in the list.
      * @param city
      *      This is a candidate city
      * @return
@@ -45,10 +45,12 @@ public class CityList {
     }
 
     /**
-     * Check if a city is present in the list. If it does then remove it from the list,
-     * if not then **throw an exception**
+     * Checks if a city is present in the list. If it is, then remove it from the list.
+     * If not, then throw an exception.
      * @param city
      *      This is a candidate city to delete
+     * @return
+     *      Return the size of the cities list
      */
     public int delete(City city) {
         if (!(cities.remove(city))) {

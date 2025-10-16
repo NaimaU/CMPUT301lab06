@@ -47,6 +47,9 @@ class CityListTest {
 
     @Test
     void testHasCity() {
-        
+        CityList cityList = mockCityList();
+        assertEquals(1, cityList.getCities().size());
+        // check if mockCityList and cityList have
+
     }
 }
