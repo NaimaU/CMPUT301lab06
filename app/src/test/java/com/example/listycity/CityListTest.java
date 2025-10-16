@@ -49,7 +49,42 @@ class CityListTest {
     void testHasCity() {
         CityList cityList = mockCityList();
         assertEquals(1, cityList.getCities().size());
-        // check if mockCityList and cityList have
 
+        City city = new City("Regina", "Saskatchewan");
+        assertFalse(cityList.hasCity(city));
+        assertTrue(cityList.hasCity(mockCity()));
+    }
+
+    @Test
+    void testDelete() {
+        CityList cityList = mockCityList();
+        assertEquals(1, cityList.getCities().size());
+
+        City city = new City("Regina", "Saskatchewan");
+        cityList.add(city);
+        assertEquals(2, cityList.getCities().size());
+
+        cityList.delete(city);
+        assertEquals(1, cityList.getCities().size());
+
+        // throw an exception if a city deleted is not in the list
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(city);
+        });
+    }
+
+    @Test
+    void testCountCities() {
+        CityList cityList = mockCityList();
+        assertEquals(1, cityList.countCities());
+
+        // Create another city object
+        City city = new City("Charlottetown", "Prince Edward Island");
+        cityList.add(city);
+        assertEquals(2, cityList.countCities());
+
+        // delete said city object
+        cityList.delete(city);
+        assertEquals(1, cityList.countCities());
     }
 }

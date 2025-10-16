@@ -49,13 +49,20 @@ public class CityList {
      * If not, then throw an exception.
      * @param city
      *      This is a candidate city to delete
-     * @return
-     *      Return the size of the cities list
      */
-    public int delete(City city) {
+    public void delete(City city) {
         if (!(cities.remove(city))) {
             throw new IllegalArgumentException();
         }
+    }
+
+    /**
+     * Counts number of cities in cityList.
+     * @return
+     *      Return count of cities in cityList.
+     */
+    public int countCities() {
         return cities.size();
     }
+
 }
